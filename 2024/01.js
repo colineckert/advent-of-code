@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-fs.readFile("locations.txt", "utf8", (err, data) => {
+fs.readFile("01-input.txt", "utf8", (err, data) => {
   if (err) throw err;
 
   const lines = data.split("\n");
