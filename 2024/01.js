@@ -1,9 +1,9 @@
-const fs = require("node:fs");
+const fs = require('node:fs');
 
-fs.readFile("01-input.txt", "utf8", (err, data) => {
+fs.readFile('01-input.txt', 'utf8', (err, data) => {
   if (err) throw err;
 
-  const lines = data.split("\n");
+  const lines = data.split('\n');
 
   const column1 = [];
   const column2 = [];
@@ -20,7 +20,7 @@ fs.readFile("01-input.txt", "utf8", (err, data) => {
   // console.log("TOTAL:", total);
 
   const score = calcSimilariy(column1, column2);
-  console.log("SCORE:", score);
+  console.log('SCORE:', score);
 });
 
 /**
