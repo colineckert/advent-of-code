@@ -27,6 +27,22 @@ fs.readFile('02-input.txt', 'utf8', (err, data) => {
  * @returns {boolean} true if array is safe
  */
 function isSafe(nums) {
+  if (isSubsetSafe(nums)) return true;
+
+  for (let i = 0; i < nums.length; i++) {
+    const subset = nums.filter((_, idx) => idx !== i);
+    if (isSubsetSafe(subset)) return true;
+  }
+
+  return false;
+}
+
+/**
+ * Determines if nums array is "safe"
+ * @param {number[]} nums
+ * @returns {boolean} true if array is safe
+ */
+function isSubsetSafe(nums) {
   let trend;
   let flip = 0;
 
